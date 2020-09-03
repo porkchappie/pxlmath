@@ -1,12 +1,12 @@
 #ifndef PXLMATH_H
 #define PXLMATH_H
 
-#define PXLMATH_RADIAN 0
-#ifdef PXLMATH_RADIAN
+#define PXLMATH_USE_RADIAN 0
+#if PXLMATH_USE_RADIAN
+#define PXLMATH_RAD2DEG
+#else
 #define PXLMATH_RAD2DEG * mathf::rad2deg
 #define PXLMATH_DEG2RAD * mathf::deg2rad
-#else
-#define PXLMATH_RAD2DEG
 #endif
 
 #include <cmath>
