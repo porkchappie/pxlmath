@@ -551,9 +551,9 @@ namespace pxl {
 		}
 		inline static constexpr vec3f to_scale(const mat4f& m) {
 			return {
-				m.m00 * m.m00 + m.m10 * m.m10 + m.m20 * m.m20,
-				m.m01 * m.m01 + m.m11 * m.m11 + m.m21 * m.m21,
-				m.m02 * m.m02 + m.m12 * m.m12 + m.m22 * m.m22 };
+				sqrtf(m.m00 * m.m00 + m.m10 * m.m10 + m.m20 * m.m20),
+				sqrtf(m.m01 * m.m01 + m.m11 * m.m11 + m.m21 * m.m21),
+				sqrtf(m.m02 * m.m02 + m.m12 * m.m12 + m.m22 * m.m22) };
 		}
 		inline static constexpr mat4f from_translation(const vec3f& t) {
 			return {
